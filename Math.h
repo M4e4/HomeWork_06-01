@@ -1,4 +1,3 @@
-#pragma once
 #ifndef MATH_H
 #define MATH_H
 
@@ -8,4 +7,4 @@ double multiplication(double a, double b);
 double division(double a, double b);
 double power(double a, double b);
 
-#endif // MATH_H
+#endif // !MATH_H

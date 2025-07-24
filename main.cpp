@@ -1,11 +1,12 @@
 #include <iostream>
 #include "Math.h"
 
-int main() // !нет обработки нуля!
+int main()
 {
 	double a{};
 	double b{};
-	int c{};
+	int num{};
+	double (*operation[])(double, double) = { addition, subtraction, multiplication, division, power };
 
 	std::cout << "Enter first number:";
 	std::cin >> a;
@@ -14,26 +15,9 @@ int main() // !нет обработки нуля!
 	std::cin >> b;
 
 	std::cout << "Select operation (1 - addition, 2 - subtraction, 3 - multiplication, 4 - division, 5 - power)";
-	std::cin >> c;
+	std::cin >> num;
 
-	switch(c)
-	{
-	case 1:
-		std::cout << addition(a, b);
-		break;
-	case 2:
-		std::cout << subtraction(a, b);
-		break;
-	case 3:
-		std::cout << multiplication(a, b);
-		break;
-	case 4:
-		std::cout << division(a, b);
-		break;
-	case 5:
-		std::cout << power(a, b);
-		break;
-	}
+	std::cout << operation[num - 1](a, b);
 
 	return EXIT_SUCCESS;
 }
